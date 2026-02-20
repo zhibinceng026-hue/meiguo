@@ -1,0 +1,19 @@
+proxies:
+  - name: "广州Realm中转"
+    type: vmess
+    server: 8.138.174.227                广州服务器ID
+    port: 2053                           广州端口     
+    uuid: 580aa77e-7e2b-41a0-931b-59844260cc0b    美国XUI端ID
+    alterId: 0
+    cipher: auto
+    network: tcp
+    udp: true
+
+proxy-groups:
+  - name: "中转组"
+    type: select
+    proxies:
+      - "广州Realm中转"     名字同上
+
+rules:
+  - MATCH,中转组
